@@ -4,8 +4,7 @@
 # квадратами элементов исходного списка
 # [1, 2, 4, 0] --> [1, 4, 16, 0]
 import random
-base_list = [random.randint(0,10) for i in range(10)]
-list = [x**2 for x in base_list]
+list = [random.randint(0,10)**2 for x in range(10)]
 print(list)
 
 # Задание-2:

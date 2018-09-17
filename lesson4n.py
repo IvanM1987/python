@@ -7,13 +7,15 @@
 # Пупкин василий - неверно указано имя, te$T@test.net - неверно указан email (спецсимвол, заглавная буква, .net),
 #  te_4_st@test.com - верно указан.
 import re
-
 name = input("Введите имя: ")
 surname = input("Введите фамилию: ")
 mail = input("Введите адрес вашего email: ")
-if name != name.title():
+pattern = "^[A-Z][a-z]+$"
+check = re.search(pattern, name)
+if check == None:
     print("неверно указано имя")
-if surname != surname.title():
+check = re.match(pattern, surname)
+if check == None:
     print("неверно указана фамилия")
 pattern = "^([a-z0-9_]+)@([a-z0-9]+\.)(ru|org|com)$"
 check = re.search(pattern, mail)
