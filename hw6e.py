@@ -95,7 +95,9 @@ class Trapeze:
         return full_area
 
     def check(self):
-        if trapeze.side_size_1() == trapeze.side_size_2():
+        if (trapeze.side_size_1() == trapeze.side_size_2() and
+                trapeze.kolinear_base() == True and
+                trapeze.long_base_lenght() != trapeze.short_base_lenght()):
             print('Трапеция равнобедренна')
         else:
             print('Трапеция не равнобедренна')
@@ -117,10 +119,10 @@ class Trapeze:
 
 trapeze = Trapeze('0, 0', '10, 10', '30, 10', '40, 0')
 
-print(trapeze.side_size_1())
-print(trapeze.side_size_2())
-print(trapeze.long_base_lenght())
-print(trapeze.short_base_lenght())
-print(trapeze.perimeter_trapeze())
-print(trapeze.area_trapeze())
-print(trapeze.check())
+print(f'Длинна боковой стороны: {trapeze.side_size_1()}')
+print(f'Длинна боковой стороны: {trapeze.side_size_2()}')
+print(f'Длтнна большего основания трапеции: {trapeze.long_base_lenght()}')
+print(f'Длтнна меньшего основания трапеции: {trapeze.short_base_lenght()}')
+print(f'Длинна периметра: {trapeze.perimeter_trapeze()}')
+print(f'Площадь: {trapeze.area_trapeze()}')
+print(f'Равнобедренность: {trapeze.check()}')
