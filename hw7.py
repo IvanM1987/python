@@ -80,11 +80,11 @@ def numbers_to_remove():
         answer = 0
         print(f'Новый боченок : {temp_num[a]}. (Осталось {b})\n')
         show_card(card, computer_card)
-        while answer != 1 and answer != 2:
-            try:
-                answer = int(input('Если вы хотите удалить число - нажмите 1, иначе - 2'))
-            except ValueError:
-                print("Вы ввели неправильный символ!")
+        try:
+            answer = int(input('Если вы хотите удалить число - нажмите 1, иначе - 2'))
+        except ValueError:
+            print("Вы ввели неправильный символ!")
+            break
         temp_win = remove(a, card, temp_num)
         win_points = win_points + temp_win
         temp_lose = remove(a, computer_card, temp_num)
